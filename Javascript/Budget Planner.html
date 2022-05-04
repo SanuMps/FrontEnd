@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <h1 class="display-1 text-center font-weight-bold">
+            Budget Planner
+        </h1>
+        <div class="row">
+            <div class="col-md-6 m-3">
+                <form onsubmit="myFunction(); return false;" required>
+                    <div class="form-group">
+                        <label for="budget">Budget for:</label>
+                        <input type="text" id="budget" placeholder="Enter here" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manager">Manager:</label>
+                        <input type="text" id="manager" placeholder="Enter the name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" placeholder="Enter the Amount" class="form-control" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="reset">Clear</button>
+                    <br>
+                    <br>
+                    <!-- <div class="form-group">
+                       <p class="text">Total Budget:  <a href="RegisterForm.html" class="btn btn-primary">Calculate</a></p>  
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <h1 class="display-4 text-center" style="margin: auto;">Records</h1>
+    <table class="table table-bordered tabled-stripped w-50 text-center" style="margin: auto;" id="myTable">
+        <tr>
+            <td>Budget</td>
+            <td>Manager</td>
+            <td>Amount</td>
+        </tr>
+    </table>
+
+    <script>
+        function myFunction() {
+            var tbl = document.getElementById("myTable");
+            var row = tbl.insertRow();
+            var a = row.insertCell();
+            var b = row.insertCell();
+            var c = row.insertCell();
+            a.innerHTML = document.getElementById("budget").value;
+            b.innerHTML = document.getElementById("manager").value;
+            c.innerHTML = document.getElementById("amount").value;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
